@@ -96,7 +96,7 @@ class MyGameView : ConstraintLayout {
     fun showUi(): Unit {
         tv.visibility = View.VISIBLE
         for (item in imgButtons) {
-            item.visibility = View.INVISIBLE
+            item.visibility = View.VISIBLE
         }
     }
 
