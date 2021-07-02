@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import java.util.*
 
@@ -16,7 +15,6 @@ class MyGameView : ConstraintLayout {
 
     private var callback: MyCallback? = null
     private var prizes = mutableListOf<Prize>()
-    private var tv: TextView
     private var imgBtn1: ImageButton
     private var imgBtn2: ImageButton
     private var imgBtn3: ImageButton
@@ -29,7 +27,6 @@ class MyGameView : ConstraintLayout {
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle) {
         View.inflate(context, R.layout.mygameview, this)
-        tv = findViewById(R.id.game_title)
         imgBtn1 = findViewById(R.id.img1)
         imgBtn2 = findViewById(R.id.img2)
         imgBtn3 = findViewById(R.id.img3)
@@ -61,7 +58,6 @@ class MyGameView : ConstraintLayout {
                 drawTimes++
                 val prize = drawPrize()
                 prizeImage.setImageBitmap(prize.img)
-                tv.visibility = View.INVISIBLE
                 for (item in imgButtons) {
                     item.visibility = View.INVISIBLE
                 }
@@ -94,7 +90,6 @@ class MyGameView : ConstraintLayout {
     }
 
     fun showUi(): Unit {
-        tv.visibility = View.VISIBLE
         for (item in imgButtons) {
             item.visibility = View.VISIBLE
         }
