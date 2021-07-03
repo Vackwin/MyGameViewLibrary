@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import java.util.*
 
@@ -20,6 +21,8 @@ class MyGameView : ConstraintLayout {
     private var imgBtn3: ImageButton
     private var imgBtn4: ImageButton
     private var prizeImage: ImageView
+    private var prizeName : TextView
+    private var prizeDescription : TextView
     private var drawTimes = 0
     private lateinit var imgButtons: List<ImageButton>
 
@@ -32,6 +35,8 @@ class MyGameView : ConstraintLayout {
         imgBtn3 = findViewById(R.id.img3)
         imgBtn4 = findViewById(R.id.img4)
         prizeImage = findViewById(R.id.prize_image)
+        prizeName = findViewById(R.id.prize_name)
+        prizeDescription = findViewById(R.id.prize_description)
         imgButtons = listOf(
                 imgBtn1,
                 imgBtn2,
@@ -58,10 +63,14 @@ class MyGameView : ConstraintLayout {
                 drawTimes++
                 val prize = drawPrize()
                 prizeImage.setImageBitmap(prize.img)
+                prizeName.text = prize.name
+                prizeDescription.text = prize.description
                 for (item in imgButtons) {
                     item.visibility = View.INVISIBLE
                 }
                 prizeImage.visibility = View.VISIBLE
+                prizeName.visibility = View.VISIBLE
+                prizeDescription.visibility = View.VISIBLE
                 callback?.onPrizeSelected(prize, drawTimes)
             }
         }
@@ -87,6 +96,8 @@ class MyGameView : ConstraintLayout {
 
     fun hidePrize(): Unit {
         this.prizeImage.visibility = View.INVISIBLE
+        this.prizeName.visibility = View.INVISIBLE
+        this.prizeDescription.visibility = View.INVISIBLE
     }
 
     fun showUi(): Unit {
