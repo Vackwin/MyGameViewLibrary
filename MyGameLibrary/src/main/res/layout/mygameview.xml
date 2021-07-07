@@ -62,7 +62,7 @@
 
     <ImageView
         android:id="@+id/prize_image"
-        android:layout_width="155dp"
+        android:layout_width="165dp"
         android:layout_height="200dp"
         android:visibility="invisible"
         android:background="@drawable/shape"
