@@ -64,13 +64,12 @@
         android:id="@+id/prize_image"
         android:layout_width="177dp"
         android:layout_height="230dp"
-        android:background="@android:color/transparent"
-        android:visibility="invisible"
+        android:background="@drawable/shape"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="70dp"/>
     <TextView
         android:id="@+id/prize_name"
         android:layout_width="wrap_content"
@@ -82,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="@+id/prize_image"
         app:layout_constraintStart_toStartOf="@+id/prize_image"
         app:layout_constraintTop_toTopOf="@+id/prize_image"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/prize_description"
