@@ -70,7 +70,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingBottom="70dp"/>
+        android:paddingBottom="70dp"
+        android:paddingHorizontal="1dp"/>
     <TextView
         android:id="@+id/prize_name"
         android:layout_width="wrap_content"
